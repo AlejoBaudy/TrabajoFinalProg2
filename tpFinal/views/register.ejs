@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+
+<head>
+	<%- include("./partials/head") %>
+</head>
+
+<body>
+	<%- include("./partials/header2") %>
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			
+			<form method="get" class="formulario" action="">
+				<div class="contenedorR">
+					<div class="col-12">
+						<h2 class="products-title">Registrate</h2>
+					</div>
+					<div class="cajaR">
+						<label class="labelR">Email:</label>
+						<input type="email" name="emailusuario" class="inputR" required>
+					</div>
+					<div class="cajaR">
+						<label class="labelR">Usuario:</label>
+						<input type="text" name="nombreusuario" class="inputR" required>
+					</div>
+					<div class="cajaR">
+						<label class="labelR">Contraseña:</label>
+						<input type="password" name="passwordusuario" class="inputR">
+					</div>
+					<div class="cajaR">
+						<label class="labelR">Fecha de nacimiento:</label>
+						<input type="date" id="fecha-nacimiento" name="fechaUsuario" class="inputR" required>
+					</div>
+					<div class="cajaR">
+						<label class="labelR">DNI:</label>
+						<input type="number" id="nro-documento" name="DniUsuario" class="inputR" required>
+					</div>
+					<div class="cajaR">
+						<label class="labelR">Foto de perfil:</label>
+						<input type="text" name="FotoPerfilUsuario" class="inputR" required>
+					</div>	
+					<button type="submit" class="botonR">Enviar</button>
+				</div>
+			</form>
+			<%- include("./partials/footer") %>
+</body>
+
+</html>

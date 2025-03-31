@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+
+<head>
+	<%- include("./partials/head") %>
+</head>
+
+<body>
+	<%- include("./partials/header2") %>
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			
+			<form method="get" class="formulario" action="">
+				<div class="contenedorL">
+					<div class="col-12">
+						<h2 class="products-title">Ingresar</h2>
+					</div>
+					<div class="cajaL">
+						<label class="labelL">Usuario:</label>
+						<input type="email" name="nombreusuario" class="inputL" required>
+					</div>
+					<div class="cajaL">
+						<label class="labelL">Contraseña:</label>
+						<input type="password" name="passwordusuario" class="inputL" required>
+					</div>
+					<div class="cajaL">
+						<label class="labelL">Recordarme:</label>
+						<input type="checkbox"  name="recordarmeUsuario" class="inputLCheckbox">
+					</div>
+					<button type="submit" class="botonL">Enviar</button>
+				</div>
+			</form>
+
+
+			<%- include("./partials/footer") %>
+</body>
+
+</html>

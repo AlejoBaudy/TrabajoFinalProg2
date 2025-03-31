@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+
+<head>
+	<%- include("./partials/head") %>
+</head>
+
+<body>
+	<%- include("./partials/header") %>
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<form method="get" class="formulario" action="">
+			<div class="contenedorP">
+				<div class="col-12">
+					<h2 class="products-title">Agregar productos</h2>
+				</div>
+					<div class="cajaP">
+						<label class="labelP">Imagen:</label>
+						<input type="file" name="Imagenusuario" class="inputP" required>
+					</div>
+					<div class="cajaP">
+						<label class="labelP">Producto:</label>
+						<input type="text" name="Productousuario" class="inputP" required>
+					</div>
+					<div class="cajaP">
+						<label class="labelP">Descripcion:</label>
+						<input type="text" name="DescripcionUsuario" class="inputP" required>
+					</div>	
+					<button type="submit" class="botonP">Enviar</button>
+				</div>
+			</form>
+		
+
+
+			<%- include("./partials/footer") %>
+</body>
+
+</html>
