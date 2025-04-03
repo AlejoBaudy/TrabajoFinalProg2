@@ -1,3 +1,5 @@
+const Usuarios = require("../db/usuarios")
+
 const productController ={
     product: function(req,res){
       res.render('product')

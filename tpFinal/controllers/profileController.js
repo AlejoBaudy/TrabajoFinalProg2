@@ -1,16 +1,16 @@
-
 const nombre = require("../db/usuarios");
-
 
 const profileController ={
     profile: function(req,res){
       nombreUsu = nombre.usuario.Usuario
       emailUsu = nombre.usuario.Email
       fotoUsu = nombre.usuario.Foto
+      producto1 = nombre.productos
       res.render('profile', {
         nombreUsuario: nombreUsu,
         emailUsuario: emailUsu,
-        fotoUsuario: fotoUsu
+        fotoUsuario: fotoUsu,
+        productos: producto1
       })
     },
     login: function(req,res){
