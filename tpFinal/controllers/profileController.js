@@ -1,4 +1,4 @@
-const express = require("express");
+
 const nombre = require("../db/usuarios");
 
 
@@ -12,6 +12,16 @@ const profileController ={
         emailUsuario: emailUsu,
         fotoUsuario: fotoUsu
       })
+    },
+    login: function(req,res){
+      res.render('login')
+    },
+    register: function(req,res){
+      res.render('register')
+    },
+    headerLogueado: function(req,res){
+      res.render('headerLogueado') 
     }
+    
   };
   module.exports = profileController;
