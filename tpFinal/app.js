@@ -6,13 +6,13 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const headerRouter = require("./routes/headerLogueado")
-const loginRouter = require("./routes/login")
-const productAddRouter = require("./routes/product-add")
+const headerRouter = require("./routes/profile")
+const loginRouter = require("./routes/profile")
+const productAddRouter = require("./routes/product")
 const productRouter = require("./routes/product")
 const profileRouter = require("./routes/profile")
-const registerRouter = require("./routes/register")
-const searchRouter = require("./routes/search-results")
+const registerRouter = require("./routes/profile")
+const searchRouter = require("./routes/product")
 
 
 var app = express();
