@@ -10,45 +10,45 @@ const Usuarios= {
         },
      productos: [{
         id: 1,
-        Imagen: "/images/products/img-tv-samsung-smart.jpg",
-        Producto: "Television Samsung Smart",
-        Descripcion: "70 pulgadas",
+        Imagen: "/images/products/zapatillaBaskettres.jpg",
+        Producto: "Zapatillas basket nike",
+        Descripcion: "Zapatillas blancas",
         Comentarios: [
          {
             usuario: "Francisco Martini",
-            texto: "Excelente Television!",
+            texto: "Excelentes zapas!",
             imagenPerfil: "/images/users/Foto1.jpg"
          }
         ]
     },{
-        Imagen: "/images/products/img-samsung-galaxy-s10.jpg",
+        Imagen: "/images/products/remeraMiami.jpg",
         id: 2,
-        Producto: "Telefono Samsung Galaxy S10",
-        Descripcion: "Telefono de ultima generacion",
+        Producto: "Remera Miami Heat",
+        Descripcion: "Remera de los Miami Heat de muy buena calidad",
         Comentarios: [
          {
             usuario: "Francisco Martini",
-            texto: "Excelente Telefono!",
+            texto: "Excelente remera!",
             imagenPerfil: "/images/users/Foto1.jpg"
          }
         ]
      },{
-        Imagen: "/images/products/img-macbook-pro-2019.jpg",
+        Imagen: "/images/products/remeragolden.jpg",
         id: 3,
-        Producto: "Macbook Pro",
-        Descripcion: "Año 2019, usada, bateria en muy buen estado",
+        Producto: "Remera de basket",
+        Descripcion: "Remera de los Golden State",
         Comentarios: [
          {
             usuario: "Francisco Martini",
-            texto: "Excelente computadora!",
+            texto: "Gran remera!",
             imagenPerfil: "/images/users/Foto1.jpg"
          }
         ]
      },{
-        Imagen: "/images/products/img-cafetera-moulinex.jpg",
+        Imagen: "/images/products/shortrojo.jpg",
         id: 4,
-        Producto: "Cafetera Moulinex",
-        Descripcion: "Estado impecable, año 2020",
+        Producto: "Short de basket",
+        Descripcion: " Short rojo Jordan",
         Comentarios: [
          {
             usuario: "Francisco Martini",
@@ -69,10 +69,10 @@ const Usuarios= {
          }
         ]
      },{
-        Imagen: "/images/products/lillard.jpg",
+        Imagen: "/images/products/camisetaLilard.jpg",
         id: 6,
         Producto: "Camiseta Damian Lillard",
-        Descripcion: "Oficial, año 2021",
+        Descripcion: "Oficial",
         Comentarios: [
          {
             usuario: "Francisco Martini",
@@ -81,45 +81,45 @@ const Usuarios= {
          }
         ]
      },{
-        Imagen: "/images/products/iphone15.jpg",
+        Imagen: "/images/products/remeraAll.jpg",
         id: 7,
-        Producto: "iPhone 15",
-        Descripcion: "284 GB",
+        Producto: "Remera de basket",
+        Descripcion: " Remera All Stars",
         Comentarios: [
          {
             usuario: "Francisco Martini",
-            texto: "Esta en excelente estado!",
+            texto: "Gran remera!",
             imagenPerfil: "/images/users/Foto1.jpg"
          }
         ]
      },{
-        Imagen: "/images/products/jabulani.jpg",
+        Imagen: "/images/products/zapatillaBasketdos.jpg",
         id: 8,
-        Producto: "Adidas Jabulani",
-        Descripcion: "Pelota de futbol mundial 2010",
+        Producto: "Zapatillas de basket",
+        Descripcion: "Zapatillas de basket Nike",
         Comentarios: [
          {
             usuario: "Francisco Martini",
-            texto: "Me la compre por Forlan, no se hacen pelotas como estas hoy en día",
+            texto: "Muy buenas zapatillas, ahora meto mas puntos!",
             imagenPerfil: "/images/users/Foto1.jpg"
          }
         ]
      },{
-        Imagen: "/images/products/dare.jpg",
+        Imagen: "/images/products/conjuntoBulls.jpg",
         id: 9,
-        Producto: "Funko pop Daredevil",
-        Descripcion: "Producto de Marvel",
+        Producto: "Conjunto Bulls",
+        Descripcion: "Producto de basket",
         Comentarios: [
          {
             usuario: "Francisco Martini",
-            texto: "Gran personaje!",
+            texto: "Gran conjunto!",
             imagenPerfil: "/images/users/Foto1.jpg"
          }
         ]
      },{
-        Imagen: "/images/products/cmc.jpg",
+        Imagen: "/images/products/camisetaBoston.jpg",
         id: 10,
-        Producto: "Remera Christian McCaffrey",
+        Producto: "Remera de los Boston",
         Descripcion: "Talle L",
         Comentarios: [
          {
@@ -128,7 +128,31 @@ const Usuarios= {
             imagenPerfil: "/images/users/Foto1.jpg"
          }
         ]
-     }],
+     },{
+      Imagen: "/images/products/camisetaphoenix.jpg",
+      id: 11,
+      Producto: "Remera de los Phoenix",
+      Descripcion: "Talle M",
+      Comentarios: [
+       {
+          usuario: "Francisco Martini",
+          texto: "Muy buena remera, gran calidad!",
+          imagenPerfil: "/images/users/Foto1.jpg"
+       }
+      ]
+   },{
+      Imagen: "/images/products/camisetaboca.jpg",
+      id: 12,
+      Producto: "Remera de Boca",
+      Descripcion: "Camiseta retro",
+      Comentarios: [
+       {
+          usuario: "Francisco Martini",
+          texto: "Muy buena remera, buenos detalles!",
+          imagenPerfil: "/images/users/Foto1.jpg"
+       }
+      ]
+   }],
         
 
  }
