@@ -16,7 +16,7 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"> <p><%= nombreUsuario %></p>
-						<a href="profile-edit.html">
+						<a href="/profile">
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>
@@ -44,7 +44,7 @@
 			<% for (let i = 0; i < productos.length; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/producto/<%= i %>">
+						<a href="/product/<%= i %>">
 							<div class="product-box_image">
 								<img src="<%= productos[i].Imagen %>" alt="<%= productos[i].Producto %>">
 							</div>

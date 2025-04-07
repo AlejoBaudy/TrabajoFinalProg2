@@ -25,7 +25,13 @@ body {
   margin: 0;
   font-size: 10px;
 }
-
+header{
+  height: 140px;
+}
+.logo{
+  width: 70%;
+  margin-left: 15px;
+}
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
@@ -67,7 +73,6 @@ hr {
 
 /*====== Main Header ======*/
 .main-header {
-  padding: 15px 0;
   background-color: var(--yellow);
 }
 
@@ -78,7 +83,6 @@ hr {
 
 .main-header_credit-link {
   font-size: 1.5em;
-  margin-top: 20px;
   text-align: center;
 }
 
@@ -86,6 +90,7 @@ hr {
   position: relative;
   display: flex;
   align-items: center;
+  margin-left: 30px;
 }
 
 .search-form_input {
@@ -123,7 +128,6 @@ hr {
 }
 
 .main-navbar {
-  margin-top: 20px;
   display: none;
 }
 
