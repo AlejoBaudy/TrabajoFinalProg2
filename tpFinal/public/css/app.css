@@ -28,7 +28,7 @@ body {
 header{
   height: 140px;
 }
-.logo{
+.Logo{
   width: 70%;
   margin-left: 15px;
 }
@@ -105,7 +105,7 @@ hr {
   position: relative;
   display: flex;
   align-items: center;
-  margin-left: 30px;
+  width: 120%;
 }
 
 .search-form_input {
@@ -142,13 +142,16 @@ hr {
   margin: 20px auto 0;
 }
 
-.main-navbar {
-  display: none;
+.main-navbar{
+  margin-top: -35px;
 }
 
 .left-navbar,
 .right-navbar {
   font-size: 1.5em;
+}
+.left-navbar{
+  margin-left: -40px;
 }
 
 .logout{
@@ -173,11 +176,12 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url(/images/publicaoracle.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   height: 100px;
+  
 }
 
 
@@ -498,7 +502,7 @@ textarea.form-input {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #EAC926;
+  background-color: #b13e10;
   min-height: 52vh;
   width: 40%;
   margin-left: 340px;
@@ -610,6 +614,7 @@ textarea.form-input {
 
 }
 
+
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
   .main-header_credit-link {
@@ -632,6 +637,7 @@ textarea.form-input {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+
   }
 
   .left-navbar a,

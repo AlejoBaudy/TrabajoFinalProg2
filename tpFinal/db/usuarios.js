@@ -6,7 +6,7 @@ const Usuarios= {
             Contrasena: "Wildo1506",
             Fecha: "15/06/2006",
             DNI: 47346229,
-            Foto: "/images/users/default-image.png"
+            Foto: "/images/users/foto1.jpg"
         },
      productos: [{
         id: 1,
