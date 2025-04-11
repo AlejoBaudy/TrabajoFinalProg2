@@ -4,7 +4,7 @@ const indexController = {
     index: function(req, res) {
         res.render('index', {
             productos: Usuarios.productos,
-            nombreUsuario: Usuarios.usuario.Usuario
+            nombreUsuario: Usuarios.usuario.Usuario,
         });
     }
 };

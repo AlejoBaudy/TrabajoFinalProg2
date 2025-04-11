@@ -7,10 +7,10 @@
   --yellow: #a83000;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
-  --gray: #666666;
   --light-gray: #ebebeb;
   --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  --base-font-family: 'Roboto', sans-serif;
+  
 }
 
 
@@ -31,13 +31,13 @@ header{
 .Logo{
   width: 70%;
   margin-left: 15px;
+
 }
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
   background-color: var(--light-gray);
 }
-
 ul,
 ol {
   list-style: none;
@@ -61,8 +61,8 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   font-family: 'Bebas Neue';
-  color: #0e0667;  
-  text-decoration: underline;
+  color: #000000;  
+
 }
 
 
@@ -149,9 +149,13 @@ hr {
 .left-navbar,
 .right-navbar {
   font-size: 1.5em;
+  margin-bottom: -80px;
 }
 .left-navbar{
   margin-left: -40px;
+}
+.opiniones{
+  padding-top: 28px;
 }
 
 .logout{
@@ -176,7 +180,7 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/publicaoracle.jpeg);
+  background-image: url(/images/img-home-banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -282,7 +286,7 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
+  background-color: #a72f00;
   padding: 20px 0;
   margin-top: 80px;
 }
