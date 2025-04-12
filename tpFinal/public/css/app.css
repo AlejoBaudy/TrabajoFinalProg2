@@ -199,6 +199,8 @@ hr {
   font-size: 2.4em;
   font-weight: 400;
   color: var(--gray);
+  display: flex;
+  justify-content: center;
 }
 
 .product-box {
@@ -289,6 +291,12 @@ hr {
   background-color: #a72f00;
   padding: 20px 0;
   margin-top: 80px;
+  margin-bottom: -30px;
+  width: 100%;
+
+}
+.container{
+  width: 100%;
 }
 
 .footer-data {
@@ -507,7 +515,7 @@ textarea.form-input {
   justify-content: center;
   align-items: center;
   background-color: #b13e10;
-  min-height: 52vh;
+  min-height: 65vh;
   width: 40%;
   margin-left: 340px;
   margin-top: 50px;
