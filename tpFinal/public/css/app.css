@@ -129,10 +129,17 @@ hr {
   cursor: pointer;
 }
 
-.col-12 {
-  border: solid red 10px ;
+.divMolesto {
+  margin: 0;
+  padding: 0;
+  width: 30%;
 }
 
+
+
+.col-12 col-md-4{
+  margin-left: 50px;
+}
 
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
@@ -144,6 +151,12 @@ hr {
   padding: 5px 15px;
   display: block;
   margin: 20px auto 0;
+}
+.rowalign-items-center{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
 .main-navbar{
