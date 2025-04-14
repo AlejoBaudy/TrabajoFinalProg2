@@ -129,6 +129,10 @@ hr {
   cursor: pointer;
 }
 
+.col-12 {
+  border: solid red 10px ;
+}
+
 
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
