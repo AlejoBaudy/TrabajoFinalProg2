@@ -2,20 +2,8 @@ const Usuarios = require("../db/usuarios");
 
 const productController = {
     product: function(req, res) {
-        const productoEstatico = {
-            Imagen: "/images/products/lillard.jpg",
-            Producto: "Camiseta Damian Lillard",
-            Descripcion: "Oficial, año 2021",
-            Comentarios: [
-                {
-                    usuario: "Francisco Martini",
-                    texto: "Jugadorazo y excelente remera!",
-                    imagenPerfil: "/images/users/Foto1.jpg"
-                }
-            ]
-        };
         res.render('product', {
-            producto: productoEstatico,
+            producto: Usuarios.productos[1],
             nombreUsuario: Usuarios.usuario.Usuario
         });
     },

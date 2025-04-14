@@ -18,6 +18,16 @@ const Usuarios= {
             usuario: "Francisco Martini",
             texto: "Excelentes zapas!",
             imagenPerfil: "/images/users/Foto1.jpg"
+         },
+         {
+            usuario: "Wilfredo Schucner",
+            texto: "Gran remera!",
+            imagenPerfil: "/images/users/Foto1.jpg"
+         },
+         {
+            usuario: "Alejo Baudy",
+            texto: "Muy buena calidad!",
+            imagenPerfil: "/images/users/Foto1.jpg"
          }
         ]
     },{
@@ -29,6 +39,16 @@ const Usuarios= {
          {
             usuario: "Francisco Martini",
             texto: "Excelente remera!",
+            imagenPerfil: "/images/users/Foto1.jpg"
+         },
+         {
+            usuario: "Wilfredo Schucner",
+            texto: "Gran remera!",
+            imagenPerfil: "/images/users/Foto1.jpg"
+         },
+         {
+            usuario: "Alejo Baudy",
+            texto: "Muy buena calidad!",
             imagenPerfil: "/images/users/Foto1.jpg"
          }
         ]
@@ -77,6 +97,16 @@ const Usuarios= {
          {
             usuario: "Francisco Martini",
             texto: "Jugadorazo y excelente remera!",
+            imagenPerfil: "/images/users/Foto1.jpg"
+         },
+         {
+            usuario: "Wilfredo Schuchner",
+            texto: "Muy buena calidad!",
+            imagenPerfil: "/images/users/Foto1.jpg"
+         },
+         {
+            usuario: "Alejo Baudy",
+            texto: "Gran remera!",
             imagenPerfil: "/images/users/Foto1.jpg"
          }
         ]
