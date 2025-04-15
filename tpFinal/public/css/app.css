@@ -33,6 +33,10 @@ header{
   margin-left: -2px;
 
 }
+.Logo2{
+  width: 70%;
+  margin-left: 14px;
+}
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
