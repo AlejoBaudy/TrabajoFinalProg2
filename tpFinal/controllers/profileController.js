@@ -1,5 +1,5 @@
 const nombre = require("../db/usuarios");
-
+const db = require("")
 const profileController = {
     profile: function(req, res) {
         nombreUsu = nombre.usuario.Usuario;
@@ -13,13 +13,22 @@ const profileController = {
             productos: producto1
         });
     },
-    login: function(req, res) {
-        for (let i= 0; i < Usuarios[i].Email.length; i++){
-            if req.body.emailUsuario
+    login: function(req, res){
+       res.render('login')
+    },
+    loginVerificado: function(req, res){
+        for (let i=0; i < Usuarios[i].Email.length; i++){
+            if (req.body.emailusuario != db.Usuarios[i].email){
+                res.send("El email no fue encontrado en la base de datos. Por favor, intente de nuevo.")
+            } else{
+                if(req.body.contraseñausuario != db.Usuarios[i].password){
+                    res.send("Contraseña incorrecta. Por favor, intente de nuevo.")
+                } else{
+                    res.redirect('index')
+                }
+            }
+            if(recordame != undefined)
         }
-        res.render('login', {
-            nombreUsuario: nombre.usuario.Usuario
-        });
     },
     register: function(req, res) {
         res.render('register', {
