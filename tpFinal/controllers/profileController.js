@@ -17,6 +17,8 @@ const profileController = {
        res.render('login')
     },
     loginVerificado: function(req, res){
+
+
         for (let i=0; i < Usuarios[i].Email.length; i++){
             if (req.body.emailusuario != db.Usuarios[i].email){
                 res.send("El email no fue encontrado en la base de datos. Por favor, intente de nuevo.")
@@ -27,7 +29,6 @@ const profileController = {
                     res.redirect('index')
                 }
             }
-            if(recordame != undefined)
         }
     },
     register: function(req, res) {
