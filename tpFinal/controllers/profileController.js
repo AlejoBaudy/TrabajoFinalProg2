@@ -14,6 +14,9 @@ const profileController = {
         });
     },
     login: function(req, res) {
+        for (let i= 0; i < Usuarios[i].Email.length; i++){
+            if req.body.emailUsuario
+        }
         res.render('login', {
             nombreUsuario: nombre.usuario.Usuario
         });
