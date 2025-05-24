@@ -49,6 +49,12 @@ const profileController = {
         res.render('headerLogueado', {
             nombreUsuario: nombre.usuario.Usuario
         });
+    },
+    logout: function(req,res){
+        req.session.destroy()
+        res.clearCookie("datos")
+
+        res.redirect("/profile/login")
     }
 };
 
