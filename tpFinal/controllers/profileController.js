@@ -14,7 +14,11 @@ const profileController = {
         });
     },
     login: function(req, res){
-       res.render('login')
+       if(req.session.datosUsuario != undefined){
+        return res.redirect("/")
+       } else {
+        return res.render("login")
+       }
     },
     loginVerificado: function(req, res){
 
@@ -32,9 +36,14 @@ const profileController = {
         }
     },
     register: function(req, res) {
-        res.render('register', {
+        if(req.session.datosUsuario != undefined){
+        return res.redirect("/")
+       } else {
+        return res.render('register', {
             nombreUsuario: nombre.usuario.Usuario
         });
+       }
+        
     },
     headerLogueado: function(req, res) {
         res.render('headerLogueado', {
