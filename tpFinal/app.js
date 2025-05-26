@@ -21,6 +21,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session( { secret: "Nuestro mensaje secreto",
+        resave: false,
+        saveUninitialized: true }));
+
+app.use(function(req, res, next) {
+  if (req.session.datosUsuario != undefined) {
+    res.locals.user = req.session.datosUsuario	
+     }
+return next();
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/profile', profileRouter);
