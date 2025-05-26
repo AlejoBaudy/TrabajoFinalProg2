@@ -19,12 +19,27 @@
 			<div class="col-12">
 				<h2 class="products-title">Productos</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
-			<% for (let i = 0; i < dato.length; i++) { %>
-				<p><%= dato[i].Producto%></p>
-				<p><%= dato[i].Archivo%></p>
-				<p><%= dato[i].descripcion%></p>
-			<% } %>
+			<% if (mensaje) { %>
+				<p><%= mensaje %></p>
+			<% } else { %>
+				<% for (let i = 0; i < dato.length; i++) { %>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="/product/detalle/<%=dato[i].ID %>">
+								<div class="product-box_image">
+									<img src="<%=dato[i].Archivo %>"> 
+								</div>
+								<article class="product-box_data">
+									<h2><%= dato[i].Producto %></h2>
+									<p><%= dato[i].descripcion %></p> 
+									<p>Comentarios:</p> 
+								</article>
+							</a>
+						</section>
+					</div>
+				<% } %>		
+			<% } %>	
+	
 		</div>
 	</div>
 </body>

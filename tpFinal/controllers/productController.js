@@ -3,10 +3,11 @@ let db = require("../database/models")
 let op = db.Sequelize.Op
 const productController = {
     product: function(req, res) {
-        res.render('productDetalle', {
-            producto: Usuarios.productos[1],
-            nombreUsuario: Usuarios.usuario.Usuario
-        });
+        id = req.params.id
+        db.Producto.findByPk(id)
+        .then(function(resultados){
+            return res.render("productDetalle",{producto: resultados})
+        })
     },
     productAdd: function(req, res) {
 
