@@ -16,31 +16,28 @@ module.exports= function(sequelize,dataTypes){
         Producto:{
             type: dataTypes.STRING(255)
         },
-        Descripcion:{
+        descripcion:{
             type:dataTypes.STRING
         },
-        created_at: {
+        createdAt: {
             type: dataTypes.DATE
         },
-        updated_at: {
+        updatedAt: {
             type: dataTypes.DATE
         },
-        delete_at: {
+        deletedAt: {
             type: dataTypes.DATE
         }
     }
     let config = {
         tableName: "productos",
-        timestamps: false
+        timestamps: false,
     }
     let Producto = sequelize.define(alias,cols,config)
     Producto.associate= function(models){
-    Producto.belongsToMany(models.Usuario,{
+    Producto.belongsTo(models.Usuario,{
         as: "Usuarios",
-        through: "usuario_producto",
-        foreignKey: "producto_id",
-        otherKey: "usuario_id",
-        timestamps: false
+        foreignKey: "idUsuario",
     })
     }
     return Producto

@@ -16,13 +16,13 @@ module.exports= function(sequelize,dataTypes){
         Comentario:{
             type: dataTypes.STRING
         },
-        created_at: {
+        createdAt: {
             type: dataTypes.DATE
         },
-        updated_at: {
+        updatedAt: {
             type: dataTypes.DATE
         },
-        delete_at: {
+        deletedAt: {
             type: dataTypes.DATE
         }
     }
@@ -34,7 +34,8 @@ module.exports= function(sequelize,dataTypes){
     Comentario.associate = function(models){
         Comentario.belongsTo(models.Usuario,{
             as: "usuarios",
-            foreignKey: "id_usuario"
+            foreignKey: "id_usuario",
+            timestamps: false
         })
     }
     return Comentario
