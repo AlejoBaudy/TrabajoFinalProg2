@@ -38,6 +38,15 @@ app.use('/users', usersRouter);
 app.use('/profile', profileRouter);
 app.use('/product', productRouter);
 
+app.use(session( { secret: "Nuestro mensaje secreto",
+  resave: false,
+  saveUninitialized: true }));
+app.use(function(req, res, next) {
+    if (req.session.datosUsuario != undefined) {
+      res.locals.user = req.session.datosUsuario	
+       }
+  return next();
+  });
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
