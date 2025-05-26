@@ -1,5 +1,5 @@
 const nombre = require("../db/usuarios");
-const db = require("");
+const db = require("../database/models");
 let bcrypt = require ('bcryptjs');
 const profileController = {
     profile: function(req, res) {
@@ -24,31 +24,49 @@ const profileController = {
        }
         
     },
-    create: function(req,res){
-        let passenctriptada = bcrypt.hashSync((req.body.password,10))
-        db.usuario.findeOne({
-            where: [{email: req.body.email}]
-        })
-        .then(function(response){
-            if(response== true){
-                res.send("email ya regristado")
-            }else if(response == undefined){
-                res.send("campo vacio")
-            }else{
-                if(req.body.password == undefined){
-                    res.send("campo vacio")
-                }else if(req.body.password.length<3){
-                    res.send("la contraseña debe tener minimo 3 caracteres")
-                }else{
-                    db.usuario.create({
-                        name: req.body.name,
-                        email: req.body.email,
-                        password: passenctriptada
-                    })
-                }
+    create: function(req, res) {
+    let nombre = req.body.nombre;
+    let email = req.body.email;
+    let password = req.body.password;
+    let dni = req.body.Dni;
+    let fecha = req.body.fecha;
+    let foto = req.body.FotoPerfil
+
+
+    if (password === "") {
+        return res.send("La contraseña no puede estar vacía");
+    }
+
+    if (password.length < 3) {
+        return res.send("La contraseña debe tener mínimo 3 caracteres");
+    }
+
+    db.Usuario.findOne({ where: { email: email } })
+        .then(function(usuarioExistente) {
+            if (usuarioExistente) {
+                return res.send("El email ya está registrado");
             }
-        })
-    },
+
+            console.log(password);
+            
+
+            let passwordEncriptada = bcrypt.hashSync(password, 10);
+
+            console.log("encriptada:" + password);
+
+            db.Usuario.create({
+                name: nombre,
+                email: email,
+                contrasenia: passwordEncriptada,
+                dni: dni,
+                fecha: fecha,
+                foto: foto
+            })
+            .then(function() {
+                return res.redirect("/");
+            });
+        });
+},
     login: function(req, res){
        if(req.session.datosUsuario != undefined){
         return res.redirect("/")
@@ -56,31 +74,42 @@ const profileController = {
         return res.render("login")
        }
     },
-    loginVerificado: function(req, res){
-        email = req.body.emailusuario
-        db.User.findOne({
-            where: [{email:email}]
-        })
-        .then(function(response){
-            if(response != undefined){
-                password= req.body.passwordusuario
-                let check = bcrypt.compareSync(password,response.password)
-                if (check == true){
-                    req.session.datosUsuario = response
-                    tyc = req.body.recordarmeUsuario
-                    if(tyc != undefined){
-                        res.cookie("datos",response,{maxAge: 1000 *60 *15})
-                        res.redirect("/")
-                    }
-                    res.redirect("/")
-                }else[
-                    res.send("contraseña incorrecta")
-                ]
-            }else{
-                res.send("email no encontrado")
-            }
-        })
-    },
+    login: function(req, res){
+    if(req.session.datosUsuario != undefined){
+        return res.redirect("/");
+    } else {
+        return res.render("login");
+    }
+},
+
+loginVerificado: function(req, res){
+    let email = req.body.emailusuario;
+    let password = req.body.passwordusuario;
+
+    db.Usuario.findOne({
+        where: { email: email }
+    })
+    .then(function(usuarioEncontrado){
+        console.log(usuarioEncontrado);
+        
+        if(!usuarioEncontrado){
+            return res.send("Email no encontrado");
+        }
+
+        let passwordCorrecta = bcrypt.compareSync(password, usuarioEncontrado.contrasenia);
+        if(!passwordCorrecta){
+            return res.send("Contraseña incorrecta");
+        }
+
+        req.session.datosUsuario = usuarioEncontrado;
+
+        if(req.body.recordarmeUsuario != undefined){
+            res.cookie("datos", usuarioEncontrado, { maxAge: 1000 * 60 * 15 });
+        }
+
+        return res.redirect("/");
+    });
+},
     headerLogueado: function(req, res) {
         res.render('headerLogueado', {
             nombreUsuario: nombre.usuario.Usuario

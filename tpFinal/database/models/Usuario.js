@@ -19,13 +19,13 @@ module.exports= function(sequelize,dataTypes){
         fotoPerfil:{
             type:dataTypes.STRING(255)
         },
-        created_at: {
+        createdAt: {
             type: dataTypes.DATE
         },
-        updated_at: {
+        updatedAt: {
             type: dataTypes.DATE
         },
-        delete_at: {
+        deletedAt: {
             type: dataTypes.DATE
         }
     }
@@ -35,9 +35,9 @@ module.exports= function(sequelize,dataTypes){
     }
     let Usuario = sequelize.define(alias,cols,config)
     Usuario.associate= function(models){
-        Usuario.belongsTo(models.Comentario,{
-            as: "comentario",
-            foreignKet: "comentario_id"
+        Usuario.hasMany(models.Comentario,{
+            as: "comentarios",
+            foreignKet: "usuario_id"
         });
     Usuario.belongsToMany(models.Producto,{
         as: "productos",
