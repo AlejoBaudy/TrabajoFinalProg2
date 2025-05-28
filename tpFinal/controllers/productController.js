@@ -2,14 +2,17 @@ const Usuarios = require("../db/usuarios");
 let db = require("../database/models")
 let op = db.Sequelize.Op
 const productController = {
-    product: function(req, res) {
-        id = req.params.id
-        db.Producto.findByPk(id)
-        .then(function(resultados){
-            return res.render("productDetalle",{producto: resultados})
-        })
-    },
+   product: function(req, res) {
+       id = req.params.id
+       db.Producto.findByPk(id)
+       .then(function(resultados){
+           return res.render("productDetalle",{producto: resultados})
+       })
+   },
+
+
     productAdd: function(req, res) {
+
 
         res.render('product-add', {
             nombreUsuario: Usuarios.usuario.Usuario
@@ -26,30 +29,30 @@ const productController = {
                 return res.redirect("/")
             }
     },
-    searchResults: function(req, res) {
-        db.Producto.findAll({
-            where: {
-                Producto: {[op.like]: `%${req.query.search}`}
-            }
-        }
-        )
-        .then(function(resultado) { 
-            if (resultado.length === 0) {
-                res.render("search-results", {
-                    dato: [],
-                    mensaje: "No se encontró ningún resultado."
-                });
-            } else {
-                res.render("search-results", {
-                    dato: resultado,
-                    mensaje: null
-                });
-            }
-        })
-    },        
+  searchResults: function(req, res) {
+       db.Producto.findAll({
+           where: {
+               Producto: {[op.like]: `%${req.query.search}%`}
+           }
+       }
+       )
+       .then(function(resultado) {
+           if (resultado.length === 0) {
+               res.render("search-results", {
+                   dato: [],
+                   mensaje: "No se encontró ningún resultado."
+               });
+           } else {
+               res.render("search-results", {
+                   dato: resultado,
+                   mensaje: ""
+               });
+           }
+       })
+   },
 
-   
+
 };
 
-module.exports = productController;
 
+module.exports = productController;

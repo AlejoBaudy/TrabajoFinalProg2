@@ -2,41 +2,41 @@
 <html lang="es">
 <!-- Include Head -->
 <head>
-	<%- include("./partials/head") %>
+    <%- include("./partials/head") %>
 </head>
 <body>
 <% if (locals.user != undefined) { %>
-		<%- include("./partials/headerlogueado.ejs") %>
-	<% } else{ %>
-		<%- include("./partials/header") %>
-	<% } %>
-	<!-- product detail -->
-	<div class="container products-wrapper">
-		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= producto.Producto %></h2> 
-			<p class="product-detail-description">
-				<a href="/product/add">Editar</a>
-			</p>
-		</div>
-		<div class="product-detail">
-			<div class="row">
-				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= producto.Archivo%>" alt="<%= producto.Producto %>" class="product-detail-img">
-					<p class="product-detail-description">
-						<%= producto.descripcion %></p>
-				</article>
-				<div class="col-12 col-lg-4">
-					<form class="form" action="/product" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
-					<hr>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /product detail -->
+        <%- include("./partials/headerlogueado.ejs") %>
+    <% } else{ %>
+        <%- include("./partials/header") %>
+    <% } %>
+    <!-- product detail -->
+    <div class="container products-wrapper">
+        <div class="d-flex align-items-center">
+            <h2 class="products-title"><%= producto.Producto %></h2>
+            <p class="product-detail-description">
+                <a href="/product/add">Editar</a>
+            </p>
+        </div>
+        <div class="product-detail">
+     <div class="row">
+               <article class="col-12 col-lg-8 product-detail-info">
+                   <img src="<%= producto.Archivo%>" alt="<%= producto.Producto %>" class="product-detail-img">
+                   <p class="product-detail-description">
+                       <%= producto.descripcion %></p>
+               </article>
+               <div class="col-12 col-lg-4">
+                   <form class="form" action="/product" method="POST">
+                       <input class="form-input" type="text" value="" placeholder="Agregar comentario">
+                       <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+                   </form>
+                   <hr>
+               </div>
+           </div>
+    </div>
+    <!-- /product detail -->
 
-	<%- include("./partials/footer") %>
-</body>	
+
+    <%- include("./partials/footer") %>
+</body>
 </html>

@@ -8,7 +8,7 @@ module.exports= function(sequelize,dataTypes){
         },
         email:{
             type: dataTypes.STRING(100)
-            
+           
         },
         contrasenia:{
             type:dataTypes.STRING(200)
@@ -37,9 +37,9 @@ module.exports= function(sequelize,dataTypes){
     Usuario.associate= function(models){
         Usuario.hasMany(models.Comentario,{
             as: "comentarios",
-            foreignKey: "usuario_id"
+            foreignKet: "usuario_id"
         });
-    Usuario.hasMany(models.Producto,{
+        Usuario.hasMany(models.Producto,{
         as: "productos",
         foreignKey: "idUsuario",
     })

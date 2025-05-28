@@ -7,24 +7,28 @@
                 </a>
             </div>
 
+
             <div class="col-7 col-md-6">
-                <form action="/product/search" method="get" class="search-form">
+                <form action="/product/search" method="GET" class="search-form">
                     <input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
                     <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
                 </form>
             </div>
 
+
             <div class="divMolesto">
                 <a class="main-header_credit-link">
                     <i class="fas fa-hand-holding-usd opiniones"></i>
-                    
+                   
                 </a>
             </div>
         </div>
 
+
         <button class="btn-toggle-navbar">
             <i class="fas fa-bars"></i>
         </button>
+
 
         <nav class="main-navbar">
             <ul class="left-navbar">
@@ -32,9 +36,10 @@
                 <li><a href="/product/add">Cargar productos</a></li>
             </ul>
 
+
             <ul class="right-navbar">
                  <li>
-                    <a href="/profile"><%= locals.user.email %> <i class="far fa-address-card"></i>
+                    <a href="/profile/perfil"><%= locals.user.email %> <i class="far fa-address-card"></i>
                     </a>
                 </li>
                 <li>
@@ -46,4 +51,4 @@
             </ul>
         </nav>
     </div>
-</header> 
+</header>
