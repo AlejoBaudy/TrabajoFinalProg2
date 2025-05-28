@@ -21,9 +21,7 @@ const profileController = {
         if(req.session.datosUsuario != undefined){
         return res.redirect("/")
        } else {
-        return res.render('register', {
-            nombreUsuario: nombre.usuario.Usuario
-        });
+        return res.render('register');
        }
        
     },
@@ -120,11 +118,7 @@ loginVerificado: function(req, res){
         return res.redirect("/");
     });
 },
-    headerLogueado: function(req, res) {
-        res.render('headerLogueado', {
-            nombreUsuario: nombre.usuario.Usuario
-        });
-    },
+ 
     logout: function(req,res){
         req.session.destroy()
         res.clearCookie("datos")
