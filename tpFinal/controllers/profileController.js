@@ -8,11 +8,15 @@ const profileController = {
             where: {idUsuario:id}
         })
         .then(function(productosUsuario){
-                 res.render('profile', {
+            db.Usuario.findByPk(id)
+            .then(function(datosUsuario){
+                res.render('profile', {
                     total: productosUsuario.length,
-                    usuario: id,
-                    productos: productosUsuario
-        });
+                    productos: productosUsuario,
+                    Usuario: datosUsuario
+            });
+            })
+  
         });
    
      

@@ -19,7 +19,7 @@
             <div class="divMolesto">
                 <a class="main-header_credit-link">
                     <i class="fas fa-hand-holding-usd opiniones"></i>
-                   
+                    Todo el deporte en un solo lugar
                 </a>
             </div>
         </div>
@@ -37,16 +37,13 @@
             </ul>
 
 
-            <ul class="right-navbar">
+            <ul class="right-navbarhL">
                  <li>
-                    <a href="/profile/perfil"><%= locals.user.email %> <i class="far fa-address-card"></i>
+                    <a href="/profile/perfil/<%= locals.user.id %>"><%= locals.user.email %> <i class="far fa-address-card"></i>
                     </a>
                 </li>
                 <li>
                     <a href="/profile/logout"> LOGOUT <i class="fas fa-sign-in-alt"></i></a>
-                </li>
-                <li>
-                    <a href="/product/add">Cargar productos</a>
                 </li>
             </ul>
         </nav>

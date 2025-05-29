@@ -175,6 +175,20 @@ hr {
 .left-navbar{
   margin-left: -40px;
 }
+.leftH-navbar{
+  font-size: 1.5em;
+  margin-bottom: -80px;
+  margin-left: 17px;
+}
+.right-navbarhL{
+  font-size: 1.5em;
+  margin-bottom: -80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-right:20px;
+
+}
 .opiniones{
   padding-top: 28px;
 }

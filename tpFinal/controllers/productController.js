@@ -29,28 +29,30 @@ const productController = {
                 return res.redirect("/")
             }
     },
-  searchResults: function(req, res) {
-       db.Producto.findAll({
-           where: {
-               Producto: {[op.like]: `%${req.query.search}%`}
-           }
-       }
-       )
-       .then(function(resultado) {
-           if (resultado.length === 0) {
-               res.render("search-results", {
-                   dato: [],
-                   mensaje: "No se encontró ningún resultado."
-               });
-           } else {
-               res.render("search-results", {
-                   dato: resultado,
-                   mensaje: ""
-               });
-           }
-       })
-   },
-
+    searchResults: function(req, res) {
+        db.Producto.findAll({
+            where: {
+                Producto: { [op.like]: `%${req.query.search}%` }
+            },
+            include: [
+                { association: "Usuarios" }
+            ]
+        })
+        .then(function(resultado) {
+            if (resultado.length === 0) {
+                return res.render("search-results",{
+                    dato: [],
+                    mensaje: "no se encontro esa busqueda"
+                }
+                )
+            }
+    
+            res.render("search-results", {
+                dato: resultado,
+                mensaje: ""
+            });
+        });
+    }
 
 };
 
