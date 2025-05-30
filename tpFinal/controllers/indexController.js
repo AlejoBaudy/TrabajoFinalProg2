@@ -1,11 +1,17 @@
 const Usuarios = require("../db/usuarios");
+const db = require("../database/models");
+const op = db.sequelize.Op;
 
 const indexController = {
     index: function(req, res) {
-        res.render('index', {
-            productos: Usuarios.productos,
-            nombreUsuario: Usuarios.usuario.Usuario,
-        });
+
+        db.Producto.findAll()
+        .then(function(producto){
+             res.render('index', {productos: producto });
+        })
+       .catch(function(error){
+        console.log(error);
+        })
     }
 };
 
