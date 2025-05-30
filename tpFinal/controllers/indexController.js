@@ -1,12 +1,19 @@
+const { Association } = require("sequelize");
 const Usuarios = require("../db/usuarios");
 
 const indexController = {
     index: function(req, res) {
-        res.render('index', {
-            productos: Usuarios.productos,
-            nombreUsuario: Usuarios.usuario.Usuario,
-        });
-    }
-};
+      
+               db.Producto.findAll({
+                include:[{Association: Usuarios}]
+               })
+        .then(function(producto){
+             res.render('index', {productos: producto });
+        })
+       .catch(function(error){
+        console.log(error);
+        })
+        }
+    };
 
 module.exports = indexController;

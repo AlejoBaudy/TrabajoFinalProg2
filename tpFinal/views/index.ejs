@@ -36,6 +36,7 @@
 								<h2><%= productos[i].Producto %></h2>
 								<p><%= productos[i].Descripcion %></p> 
 								<p>Comentarios: <%= productos[i].Comentarios.length %></p> 
+								<p><a href="/profile/<%= productos[i].Usuarios.id %>"><%= productos[i].Usuarios.email %></a></p>
 							</article>
 						</a>
 					</section>
