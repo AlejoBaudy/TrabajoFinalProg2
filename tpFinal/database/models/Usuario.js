@@ -16,7 +16,7 @@ module.exports= function(sequelize,dataTypes){
         dni:{
             type: dataTypes.INTEGER.UNSIGNED
         },
-        fotoPerfil:{
+        FotoPerfil:{
             type:dataTypes.STRING(255)
         },
         createdAt: {

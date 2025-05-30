@@ -40,17 +40,11 @@ const productController = {
         })
         .then(function(resultado) {
             if (resultado.length === 0) {
-                return res.render("search-results",{
-                    dato: [],
-                    mensaje: "no se encontro esa busqueda"
-                }
-                )
+               res.send("No se encontraron resultados")
             }
     
             res.render("search-results", {
-                dato: resultado,
-                mensaje: ""
-            });
+                dato: resultado});
         });
     }
 

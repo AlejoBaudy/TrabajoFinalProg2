@@ -36,44 +36,31 @@ const profileController = {
     let dni = req.body.Dni;
     let fecha = req.body.fecha;
     let foto = req.body.FotoPerfil
-
-
-
-
     if (password === "") {
         return res.send("La contraseña no puede estar vacía");
     }
-
-
     if (password.length < 3) {
         return res.send("La contraseña debe tener mínimo 3 caracteres");
     }
-
-
     db.Usuario.findOne({ where: { email: email } })
         .then(function(usuarioExistente) {
             if (usuarioExistente) {
                 return res.send("El email ya está registrado");
             }
-
-
-            console.log(password);
-           
-
-
+            db.Usuario.findOne({ where: { Dni: dni } })
+            .then(function(dniExistente){
+                if(dniExistente){
+                    return res.send("El dni ya está registrado");
+                }
+            })
             let passwordEncriptada = bcrypt.hashSync(password, 10);
-
-
-            console.log("encriptada:" + password);
-
-
             db.Usuario.create({
                 name: nombre,
                 email: email,
                 contrasenia: passwordEncriptada,
                 dni: dni,
                 fecha: fecha,
-                foto: foto
+                FotoPerfil: foto,
             })
             .then(function() {
                 return res.redirect("/");
