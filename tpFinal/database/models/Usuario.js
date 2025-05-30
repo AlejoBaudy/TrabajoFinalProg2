@@ -19,6 +19,9 @@ module.exports= function(sequelize,dataTypes){
         FotoPerfil:{
             type:dataTypes.STRING(255)
         },
+        nombre:{
+            type: dataTypes.STRING(100)
+        },
         createdAt: {
             type: dataTypes.DATE
         },

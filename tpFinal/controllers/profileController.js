@@ -55,7 +55,7 @@ const profileController = {
             })
             let passwordEncriptada = bcrypt.hashSync(password, 10);
             db.Usuario.create({
-                name: nombre,
+                nombre: nombre,
                 email: email,
                 contrasenia: passwordEncriptada,
                 dni: dni,
