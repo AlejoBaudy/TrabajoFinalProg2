@@ -8,7 +8,7 @@ module.exports= function(sequelize,dataTypes){
         },
         idUsuario:{
             type: dataTypes.INTEGER.UNSIGNED
-            
+           
         },
         idProduct:{
             type:dataTypes.INTEGER.UNSIGNED
@@ -22,7 +22,7 @@ module.exports= function(sequelize,dataTypes){
         updatedAt: {
             type: dataTypes.DATE
         },
-        deletedAt: {
+        deleteAt: {
             type: dataTypes.DATE
         }
     }
@@ -34,8 +34,7 @@ module.exports= function(sequelize,dataTypes){
     Comentario.associate = function(models){
         Comentario.belongsTo(models.Usuario,{
             as: "usuarios",
-            foreignKey: "id_usuario",
-            timestamps: false
+            foreignKey: "id_usuario"
         })
     }
     return Comentario

@@ -3,8 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session= require('express-session')
 
-const session = require('express-session')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const profileRouter = require("./routes/profile");
@@ -23,22 +23,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session( { secret: "Nuestro mensaje secreto",
-        resave: false,
-        saveUninitialized: true }));
-
-app.use(function(req, res, next) {
-  if (req.session.datosUsuario != undefined) {
-    res.locals.user = req.session.datosUsuario	
-     }
-return next();
-});
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/profile', profileRouter);
-app.use('/product', productRouter);
-
-app.use(session( { secret: "Nuestro mensaje secreto",
   resave: false,
   saveUninitialized: true }));
 app.use(function(req, res, next) {
@@ -47,6 +31,13 @@ app.use(function(req, res, next) {
        }
   return next();
   });
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/profile', profileRouter);
+app.use('/product', productRouter);
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

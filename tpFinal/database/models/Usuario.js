@@ -8,7 +8,7 @@ module.exports= function(sequelize,dataTypes){
         },
         email:{
             type: dataTypes.STRING(100)
-            
+           
         },
         contrasenia:{
             type:dataTypes.STRING(200)
@@ -16,8 +16,11 @@ module.exports= function(sequelize,dataTypes){
         dni:{
             type: dataTypes.INTEGER.UNSIGNED
         },
-        fotoPerfil:{
+        FotoPerfil:{
             type:dataTypes.STRING(255)
+        },
+        nombre:{
+            type: dataTypes.STRING(100)
         },
         createdAt: {
             type: dataTypes.DATE
@@ -39,7 +42,7 @@ module.exports= function(sequelize,dataTypes){
             as: "comentarios",
             foreignKey: "usuario_id"
         });
-    Usuario.hasMany(models.Producto,{
+        Usuario.hasMany(models.Producto,{
         as: "productos",
         foreignKey: "idUsuario",
     })

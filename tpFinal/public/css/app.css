@@ -139,6 +139,12 @@ hr {
   width: 30%;
 }
 
+  .linkUsuario {
+    color: var(--yellow);
+    text-decoration: underline;
+}
+
+
 
 
 .col-12 col-md-4{
@@ -174,6 +180,20 @@ hr {
 }
 .left-navbar{
   margin-left: -40px;
+}
+.leftH-navbar{
+  font-size: 1.5em;
+  margin-bottom: -80px;
+  margin-left: 17px;
+}
+.right-navbarhL{
+  font-size: 1.5em;
+  margin-bottom: -80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-right:20px;
+
 }
 .opiniones{
   padding-top: 28px;
@@ -223,7 +243,14 @@ hr {
   display: flex;
   justify-content: center;
 }
-
+.products-titleLogin{
+  font-size: 2.4em;
+  font-weight: 400;
+  color: var(--gray);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
 .product-box {
   background-color: #ffffff;
   border-radius: 5px;

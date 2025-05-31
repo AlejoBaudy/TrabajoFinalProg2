@@ -1,14 +1,14 @@
 module.exports= function(sequelize,dataTypes){
     let alias = "Producto"
     let cols={
-        id:{
+        ID:{
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
         idUsuario:{
             type: dataTypes.INTEGER.UNSIGNED
-            
+           
         },
         Archivo:{
             type:dataTypes.STRING(255)
@@ -31,11 +31,11 @@ module.exports= function(sequelize,dataTypes){
     }
     let config = {
         tableName: "productos",
-        timestamps: false,
+        timestamps: false
     }
     let Producto = sequelize.define(alias,cols,config)
     Producto.associate= function(models){
-    Producto.belongsTo(models.Usuario,{
+       Producto.belongsTo(models.Usuario,{
         as: "Usuarios",
         foreignKey: "idUsuario",
     })

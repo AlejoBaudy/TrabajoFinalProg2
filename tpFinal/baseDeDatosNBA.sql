@@ -1,47 +1,49 @@
-CREATE SCHEMA BasedeDatos;
-USE BasedeDatos;
+DROP DATABASE IF EXISTS TiendaNBA;
+CREATE DATABASE TiendaNBA;
+USE TiendaNBA;
 
 CREATE TABLE usuarios (
-	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    contrasenia VARCHAR(200) NOT NULL,
-    Dni INT UNSIGNED UNIQUE NOT NULL,
-    FotoPerfil VARCHAR(255),
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(100) UNIQUE NOT NULL,
+  contrasenia VARCHAR(100) NOT NULL,
+  Dni INT UNSIGNED UNIQUE NOT NULL,
+  FotoPerfil VARCHAR(255),
+  nombre VARCHAR(100) NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deletedAt TIMESTAMP NULL
 );
 
 CREATE TABLE productos (
-	ID INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    idUsuario INT UNSIGNED NOT NULL,
-    Archivo VARCHAR(255) NOT NULL,
-    Producto VARCHAR(255) NOT NULL,
-    descripcion TEXT NOT NULL,
-	createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY(idUsuario) REFERENCES usuarios(id)
+  ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  idUsuario INT UNSIGNED NOT NULL,
+  Archivo VARCHAR(255) NOT NULL,
+  Producto VARCHAR(255) NOT NULL,
+  descripcion TEXT NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deletedAt TIMESTAMP NULL,
+  FOREIGN KEY (idUsuario) REFERENCES usuarios(id)
 );
 
 CREATE TABLE comentarios (
-	ID INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    idUsuario INT UNSIGNED NOT NULL,
-    idProduct INT UNSIGNED NOT NULL,
-    Comentario TEXT NOT NULL,
-	createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deletedAt TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY(idUsuario) REFERENCES usuarios(id),
-    FOREIGN KEY(idProduct) REFERENCES productos(ID)
+  ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  idUsuario INT UNSIGNED NOT NULL,
+  idProduct INT UNSIGNED NOT NULL,
+  Comentario TEXT NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deletedAt TIMESTAMP NULL,
+  FOREIGN KEY (idUsuario) REFERENCES usuarios(id),
+  FOREIGN KEY (idProduct) REFERENCES productos(ID)
 );
 
-INSERT INTO usuarios (id, email, contrasenia, Dni, FotoPerfil) VALUES
-(DEFAULT, "wschuchner@udesa.edu.ar", "Wildo123", 47346229, "/images/wilfre.jpg"),
-(DEFAULT, "abaudy@udesa.edu.ar", "Baudy123", 46991275, "/images/alejo.jpg"),
-(DEFAULT, "fmartini@udesa.edu.ar", "Fran123", 47126848, "/images/fran.jpg"),
-(DEFAULT, "ssojo@udesa.edu.ar", "Sofi123", 47346111, "/images/sofi.jpg"),
-(DEFAULT, "nsojo@udesa.edu.ar", "Nachi123", 47346333, "/images/nachi.jpg");
+INSERT INTO usuarios (id, email, contrasenia, Dni, FotoPerfil, nombre) VALUES
+(DEFAULT, "wschuchner@udesa.edu.ar", "Wildo123", 47346229, "/images/wilfre.jpg", "Wilfredo"),
+(DEFAULT, "abaudy@udesa.edu.ar", "Baudy123", 46991275, "/images/alejo.jpg", "Alejo"),
+(DEFAULT, "fmartini@udesa.edu.ar", "Fran123", 47126848, "/images/fran.jpg", "Francisco"),
+(DEFAULT, "ssojo@udesa.edu.ar", "Sofi123", 47346111, "/images/sofi.jpg", "Sofía"),
+(DEFAULT, "nsojo@udesa.edu.ar", "Nachi123", 47346333, "/images/nachi.jpg", "Nacho");
 
 INSERT INTO productos (ID, idUsuario, Archivo, Producto, descripcion) VALUES
 (DEFAULT, 1, "/images/products/camisetaboca.jpg", "Camiseta de Boca", "Remera del equipo de basket de Boca"),
@@ -86,6 +88,3 @@ INSERT INTO comentarios (ID, idUsuario, idProduct, Comentario) VALUES
 (DEFAULT, 3, 10, "Excelente remera!"),
 (DEFAULT, 4, 10, "Gran remera!"),
 (DEFAULT, 5, 10, "Muy buena calidad!");
-
-
-    
