@@ -33,7 +33,13 @@
                                    <h2><%= dato[i].Producto %></h2>
                                    <p><%= dato[i].descripcion %></p>
                                    <p>Comentarios:</p>
-                                   <p>Hecha por: <a class="linkUsuario" href="/profile/perfil/<%= dato[i].idUsuario %>"><%= dato[i].Usuarios.email %></a></p>
+                                   <% if (locals.user) { %>
+                                    <p>Hecha por: <a class="linkUsuario" href="/profile/perfil/<%= dato[i].idUsuario %>"><%= dato[i].Usuarios.email %></a></p>
+                                <% } else { %>
+                                    <p>Hecha por: <a class="linkUsuario" href="/profile/login"><%= dato[i].Usuarios.email %></a></p>
+                                <% } %>
+                                
+                                   
                                </article>
                            </a>
                        </section>
