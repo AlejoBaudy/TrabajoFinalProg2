@@ -22,7 +22,7 @@ module.exports= function(sequelize,dataTypes){
         updatedAt: {
             type: dataTypes.DATE
         },
-        deleteAt: {
+        deletedAt: {
             type: dataTypes.DATE
         }
     }
@@ -34,8 +34,12 @@ module.exports= function(sequelize,dataTypes){
     Comentario.associate = function(models){
         Comentario.belongsTo(models.Usuario,{
             as: "usuarios",
-            foreignKey: "id_usuario"
-        })
+            foreignKey: "idUsuario"
+        });
+        Comentario.belongsTo(models.Producto, {
+            as: "producto",
+            foreignKey: "idProduct"
+        });
     }
     return Comentario
 }
