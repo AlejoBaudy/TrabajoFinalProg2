@@ -29,15 +29,15 @@
 			<% for (let i = 0; i < productos.length; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/product/detalle/<%= productos[i].id %> ">
+						<a href="/product/detalle/<%= productos.ID %> ">
 							<div class="product-box_image">
-								<img src="<%= productos[i].Imagen %>" alt="<%= productos[i].Producto %>"> 
+								<img src="<%= productos.Archivo %>" alt="<%= productos.Producto %>"> 
 							</div>
 							<article class="product-box_data">
-								<h2><%= productos[i].Producto %></h2>
-								<p><%= productos[i].Descripcion %></p> 
-								<p>Comentarios: <%= productos[i].Comentarios.length %></p> 
-								<p><a href="/profile/<%= productos[i].Usuarios.id %>"><%= productos[i].Usuarios.email %></a></p>
+								<h2><%= productos.Producto %></h2>
+								<p><%= productos.descripcion %></p> 
+								<p>Comentarios: <%= productos.Comentarios.length %></p> 
+								<p><a href="/profile/<%= productos.usuarios.id %>"><%= productos.usuarios.email %></a></p>
 							</article>
 						</a>
 					</section>
