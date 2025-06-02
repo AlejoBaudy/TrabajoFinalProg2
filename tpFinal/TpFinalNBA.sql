@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS TrabajoFinalNBA;
-CREATE DATABASE TrabajoFinalNBA;
-USE TrabajoFinalNBA;
+DROP DATABASE IF EXISTS TpFinalNBA;
+CREATE DATABASE TpFinalNBA;
+USE TpFinalNBA;
 
 CREATE TABLE usuarios (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -39,11 +39,11 @@ CREATE TABLE comentarios (
 );
 
 INSERT INTO usuarios (id, email, contrasenia, Dni, FotoPerfil, nombre) VALUES
-(DEFAULT, "wschuchner@udesa.edu.ar", "Wildo123", 47346229, "/images/wilfre.jpg", "Wilfredo"),
-(DEFAULT, "abaudy@udesa.edu.ar", "Baudy123", 46991275, "/images/alejo.jpg", "Alejo"),
-(DEFAULT, "fmartini@udesa.edu.ar", "Fran123", 47126848, "/images/fran.jpg", "Francisco"),
-(DEFAULT, "ssojo@udesa.edu.ar", "Sofi123", 47346111, "/images/sofi.jpg", "Sofía"),
-(DEFAULT, "nsojo@udesa.edu.ar", "Nachi123", 47346333, "/images/nachi.jpg", "Nacho");
+(DEFAULT, "wschuchner@udesa.edu.ar", "Wildo123", 47346229, "Michael_Jordan_in_2014.jpg", "Wilfredo"),
+(DEFAULT, "abaudy@udesa.edu.ar", "Baudy123", 46991275, "Foto1.jpg", "Alejo"),
+(DEFAULT, "fmartini@udesa.edu.ar", "Fran123", 47126848, "carmelo.jpg", "Francisco"),
+(DEFAULT, "ssojo@udesa.edu.ar", "Sofi123", 47346111, "jordi.jpg", "Sofía"),
+(DEFAULT, "nsojo@udesa.edu.ar", "Nachi123", 47346333, "messi.jpg", "Nacho");
 
 INSERT INTO productos (ID, idUsuario, Archivo, Producto, descripcion) VALUES
 (DEFAULT, 1, "camisetaboca.jpg", "Camiseta de Boca", "Remera del equipo de basket de Boca"),
