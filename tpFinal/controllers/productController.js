@@ -29,18 +29,23 @@ const productController = {
     },
 
     process: function(req, res) {
+    
+        
         db.Producto.create({
             Archivo: req.body.Imagenusuario,
             Producto: req.body.Productousuario,
             descripcion: req.body.DescripcionUsuario,
             idUsuario: req.session.datosUsuario.id
         })
-        .then(() => {
-            if (req.body.boton !== undefined) {
+        .then(function() {
                 return res.redirect("/");
-            }
+            
         })
-        .catch(err => res.send("Error al crear el producto: " + err));
+        .catch(function (error) {
+            console.log(error);
+            
+        })
+       
     },
 
     searchResults: function(req, res) {

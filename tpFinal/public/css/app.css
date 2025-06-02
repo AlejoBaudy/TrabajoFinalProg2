@@ -143,8 +143,10 @@ hr {
     color: var(--yellow);
     text-decoration: underline;
 }
-
-
+.link-usuario-perfil{
+  color: var(--yellow);
+  text-decoration: underline;
+}
 
 
 .col-12 col-md-4{
@@ -450,7 +452,10 @@ hr {
   font-size: 1.7em;
   margin: 0;
 }
-
+.link-iniciar-sesion{
+  color: var(--yellow);
+  text-decoration: underline;
+}
 .buy-now-button {
   background-color: var(--light-blue);
   font-size: 1.6em;
@@ -479,9 +484,14 @@ hr {
 .action-button.delete {
   background-color: rgb(248, 69, 37);
 }
-.comments {
+.comments{
   padding: 30px 15px 15px 0;
+  margin-left: 25px
 }
+.comments .comen{
+  font-size: 20px;
+}
+
 .comments article{
   margin-bottom: 7.5px;
   padding-bottom: 7.5px;

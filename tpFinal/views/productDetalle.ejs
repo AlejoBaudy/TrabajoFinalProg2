@@ -15,14 +15,16 @@
     <div class="container products-wrapper">
         <div class="d-flex align-items-center">
             <h2 class="products-title"><%= producto.Producto %></h2>
-            <p class="product-detail-description">
-                <a href="/product/add">Editar</a>
-            </p>
+            <% if (locals.user) { %>
+                <p class="product-detail-description">
+                    <a href="/product/add">Editar</a>
+                </p>
+            <% } %>
         </div>
         <div class="product-detail">
      <div class="row">
                <article class="col-12 col-lg-8 product-detail-info">
-                   <img src="/images/products/<%= producto.Archivo %>" alt="<%= producto.Producto %>" class="product-detail-img">
+                   <img src=<%= producto.Archivo %> alt="<%= producto.Producto %>" class="product-detail-img">
                    <p class="product-detail-description">
                        <%= producto.descripcion %></p>
                </article>
@@ -34,31 +36,30 @@
                         <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
                     </form>
                     <% } else { %>
-                    <p>Debes <a href="/profile/login">iniciar sesión</a> para dejar un comentario.</p>
+                        <p>Debes <a href="/profile/login" class="link-iniciar-sesion">iniciar sesión</a> para dejar un comentario.</p>
                     <% } %>
                    <hr>
                </div>
-               <section class="comments"></section>
-               <h4>Comentarios</h4>
+               <section class="comments">
+                <h4 class="comen">Comentarios</h4>
                 <% if (producto.Comentario.length === 0) { %>
-                <p>Este producto no tiene comentarios aún.</p>
+                    <p>Este producto no tiene comentarios aún.</p>
                 <% } else { %>
-                <% producto.Comentario.forEach(function(comentario) { %>
-                    <article>
-                    <img src="<%= comentario.autor.FotoPerfil %>" alt="<%= comentario.autor.nombre %>">
-                    <div class="data">
-                        <p class="user">
-                            <strong>
-                                <a href="/profile/perfil/<%= comentario.autor.id %>"><%= comentario.autor.nombre %>:</a>
-                            </strong>
-                            <%= comentario.Comentario %>
-                        </p>
-                        <p class="comentario-fecha">Publicado el: <%= comentario.createdAt.toLocaleDateString('es-AR') %></p>
-                    </div>
-                </article>
-                <% }) %>
+                    <% for (let i = 0; i < producto.Comentario.length; i++) { %>
+                        <article>
+                            <img src="<%= producto.Comentario[i].autor.FotoPerfil %>" alt="<%= producto.Comentario[i].autor.nombre %>">
+                            <div class="data">
+                                <p class="user">
+                                    <strong>
+                                        <a href="/profile/perfil/<%= producto.Comentario[i].autor.id %>"><%= producto.Comentario[i].autor.nombre %>:</a>
+                                    </strong>
+                                    <%= producto.Comentario[i].Comentario %>
+                                </p>
+                            </div>
+                        </article>
+                    <% } %>
                 <% } %>
-                </section>
+            </section>
            </div>
     </div>
     <!-- /product detail -->

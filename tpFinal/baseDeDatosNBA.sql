@@ -46,16 +46,16 @@ INSERT INTO usuarios (id, email, contrasenia, Dni, FotoPerfil, nombre) VALUES
 (DEFAULT, "nsojo@udesa.edu.ar", "Nachi123", 47346333, "/images/nachi.jpg", "Nacho");
 
 INSERT INTO productos (ID, idUsuario, Archivo, Producto, descripcion) VALUES
-(DEFAULT, 1, "/images/products/camisetaboca.jpg", "Camiseta de Boca", "Remera del equipo de basket de Boca"),
-(DEFAULT, 1, "/images/products/camisetaBoston.jpg", "Camiseta de Boston", "Remera del equipo de basket de Boston"),
-(DEFAULT, 2, "/images/products/camisetaLilard.jpg", "Camiseta de Lilard", "Remera del jugador de basket de Lilard"),
-(DEFAULT, 2, "/images/products/camisetaphoenix.jpg", "Camiseta de Phoenix", "Remera del equipo de basket de Phoenix"),
-(DEFAULT, 3, "/images/products/pelota-basket.jpg", "Pelota de basket", "Pelota de basket profesional"),
-(DEFAULT, 3, "/images/products/conjuntoBulls.jpg", "Conjunto de Bulls", "Conjunto del equipo de basket de Bulls"),
-(DEFAULT, 4, "/images/products/remeraAll.jpg", "Camiseta del All Star", "Remera del equipo de basket del All Star"),
-(DEFAULT, 4, "/images/products/zapatillaBasketdos.jpg", "Zapatillas de basket", "Zapatillas de basket Nike"),
-(DEFAULT, 5, "/images/products/remeraMiami.jpg", "Camiseta de Miami", "Remera del equipo de basket de Miami"),
-(DEFAULT, 5, "/images/products/remeragolden.jpg", "Camiseta de Golden State", "Remera del equipo de basket de Golden State");
+(DEFAULT, 1, "camisetaboca.jpg", "Camiseta de Boca", "Remera del equipo de basket de Boca"),
+(DEFAULT, 1, "camisetaBoston.jpg", "Camiseta de Boston", "Remera del equipo de basket de Boston"),
+(DEFAULT, 2, "camisetaLilard.jpg", "Camiseta de Lilard", "Remera del jugador de basket de Lilard"),
+(DEFAULT, 2, "camisetaphoenix.jpg", "Camiseta de Phoenix", "Remera del equipo de basket de Phoenix"),
+(DEFAULT, 3, "pelota-basket.jpg", "Pelota de basket", "Pelota de basket profesional"),
+(DEFAULT, 3, "conjuntoBulls.jpg", "Conjunto de Bulls", "Conjunto del equipo de basket de Bulls"),
+(DEFAULT, 4, "remeraAll.jpg", "Camiseta del All Star", "Remera del equipo de basket del All Star"),
+(DEFAULT, 4, "zapatillaBasketdos.jpg", "Zapatillas de basket", "Zapatillas de basket Nike"),
+(DEFAULT, 5, "/remeraMiami.jpg", "Camiseta de Miami", "Remera del equipo de basket de Miami"),
+(DEFAULT, 5, "remeragolden.jpg", "Camiseta de Golden State", "Remera del equipo de basket de Golden State");
 
 INSERT INTO comentarios (ID, idUsuario, idProduct, Comentario) VALUES
 (DEFAULT, 1, 1, "Excelente remera!"),

@@ -33,13 +33,18 @@
 					<section class="product-box">
 						<a href="/product/detalle/<%= producto.ID %> ">
 							<div class="product-box_image">
-								<img src="<%= producto.Archivo %>" alt="<%= producto.Producto %>"> 
+								<img src="/images/products/<%= producto.Archivo %>" alt="<%= producto.Producto %>"> 
 							</div>
 							<article class="product-box_data">
 								<h2><%= producto.Producto %></h2>
 								<p><%= producto.descripcion %></p> 
 								<p>Comentarios: <%= producto.Comentario.length %></p> 
-								<p><a href="/profile/<%= producto.usuarios.id %>"><%= producto.usuarios.email %></a></p>
+								<% if (locals.user) { %>
+  									<p><a href="/profile/perfil/<%= producto.usuarios.id %>" class="link-usuario-perfil"><%= producto.usuarios.nombre %></a></p>
+								<% } else { %>
+ 									 <p><a href="/profile/login" class="link-usuario-perfil"><%= producto.usuarios.nombre %></a></p>
+								<% } %>
+
 							</article>
 						</a>
 					</section>

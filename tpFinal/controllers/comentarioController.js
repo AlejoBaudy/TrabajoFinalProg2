@@ -13,7 +13,7 @@ const comentarioController = {
       updatedAt: new Date()
     })
     .then(function() {
-      res.redirect("/product/" + req.body.idProduct);
+      res.redirect("/product/detalle/" + req.body.idProduct);
     })
     .catch(function(error) {
       console.log(error);
