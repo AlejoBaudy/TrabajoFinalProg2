@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
@@ -26,12 +27,38 @@
                        <%= producto.descripcion %></p>
                </article>
                <div class="col-12 col-lg-4">
-                   <form class="form" action="/product" method="POST">
-                       <input class="form-input" type="text" value="" placeholder="Agregar comentario">
-                       <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-                   </form>
+                   <% if (locals.user) { %>
+                    <form class="form" action="/comentario/agregar" method="POST">
+                        <input type="hidden" name="idProduct" value="<%= producto.ID %>">
+                        <textarea name="comentario" class="form-input" placeholder="Agregar comentario" required></textarea>
+                        <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+                    </form>
+                    <% } else { %>
+                    <p>Debes <a href="/profile/login">iniciar sesión</a> para dejar un comentario.</p>
+                    <% } %>
                    <hr>
                </div>
+               <section class="comments"></section>
+               <h4>Comentarios</h4>
+                <% if (producto.Comentario.length === 0) { %>
+                <p>Este producto no tiene comentarios aún.</p>
+                <% } else { %>
+                <% producto.Comentario.forEach(function(comentario) { %>
+                    <article>
+                    <img src="<%= comentario.autor.FotoPerfil %>" alt="<%= comentario.autor.nombre %>">
+                    <div class="data">
+                        <p class="user">
+                            <strong>
+                                <a href="/profile/perfil/<%= comentario.autor.id %>"><%= comentario.autor.nombre %>:</a>
+                            </strong>
+                            <%= comentario.Comentario %>
+                        </p>
+                        <p class="comentario-fecha">Publicado el: <%= comentario.createdAt.toLocaleDateString('es-AR') %></p>
+                    </div>
+                </article>
+                <% }) %>
+                <% } %>
+                </section>
            </div>
     </div>
     <!-- /product detail -->

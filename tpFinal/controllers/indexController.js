@@ -6,7 +6,7 @@ const indexController = {
       
                db.Producto.findAll({
                 include:[{association: 'usuarios'},
-                {association: 'Comentarios'}
+                {association: 'Comentario'}
                 ]
                })
                 .then(function(producto){

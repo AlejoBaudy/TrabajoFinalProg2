@@ -27,16 +27,16 @@
                        <section class="product-box">
                            <a href="/product/detalle/<%=dato[i].ID %>">
                                <div class="product-box_image">
-                                <img src="/images/products/<%= dato[i].Archivo %>">
+                                <img src="<%= dato[i].Archivo %>">
                                </div>
                                <article class="product-box_data">
                                    <h2><%= dato[i].Producto %></h2>
                                    <p><%= dato[i].descripcion %></p>
-                                   <p>Comentarios:</p>
+                                   <p>Comentarios:<%= dato[i].Comentario.length %></p>
                                    <% if (locals.user) { %>
-                                    <p>Hecha por: <a class="linkUsuario" href="/profile/perfil/<%= dato[i].idUsuario %>"><%= dato[i].Usuarios.email %></a></p>
+                                    <p>Hecha por: <a class="linkUsuario" href="/profile/perfil/<%= dato[i].idUsuario %>"><%= dato[i].usuarios.nombre %></a></p>
                                 <% } else { %>
-                                    <p>Hecha por: <a class="linkUsuario" href="/profile/login"><%= dato[i].Usuarios.nombre %></a></p>
+                                    <p>Hecha por: <a class="linkUsuario" href="/profile/login"><%= dato[i].usuarios.nombre %></a></p>
                                 <% } %>
                                 
                                    
@@ -49,4 +49,4 @@
         </div>
     </div>
 </body>
-</html>
+</html>`
