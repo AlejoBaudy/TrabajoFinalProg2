@@ -54,7 +54,7 @@ INSERT INTO productos (ID, idUsuario, Archivo, Producto, descripcion) VALUES
 (DEFAULT, 3, "conjuntoBulls.jpg", "Conjunto de Bulls", "Conjunto del equipo de basket de Bulls"),
 (DEFAULT, 4, "remeraAll.jpg", "Camiseta del All Star", "Remera del equipo de basket del All Star"),
 (DEFAULT, 4, "zapatillaBasketdos.jpg", "Zapatillas de basket", "Zapatillas de basket Nike"),
-(DEFAULT, 5, "/remeraMiami.jpg", "Camiseta de Miami", "Remera del equipo de basket de Miami"),
+(DEFAULT, 5, "remeraMiami.jpg", "Camiseta de Miami", "Remera del equipo de basket de Miami"),
 (DEFAULT, 5, "remeragolden.jpg", "Camiseta de Golden State", "Remera del equipo de basket de Golden State");
 
 INSERT INTO comentarios (ID, idUsuario, idProduct, Comentario) VALUES
