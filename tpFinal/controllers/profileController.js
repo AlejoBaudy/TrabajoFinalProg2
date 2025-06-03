@@ -3,24 +3,34 @@ const db = require("../database/models");
 let bcrypt = require ('bcryptjs');
 const profileController = {
     profile: function(req, res) {
-        id= req.params.id
+        if (req.session.datosUsuario == undefined) {
+            return res.redirect("/");
+        }
+    
+        let id = req.params.id;
+    
         db.Producto.findAll({
-            where: {idUsuario:id}
+            where: { idUsuario: id },
+            include: [
+                {
+                    association: "Comentario",
+                    include: [{ association: "autor" }]
+                }
+            ]
         })
-        .then(function(productosUsuario){
+        .then(function(productosUsuario) {
             db.Usuario.findByPk(id)
-            .then(function(datosUsuario){
+            .then(function(datosUsuario) {
                 res.render('profile', {
                     total: productosUsuario.length,
                     productos: productosUsuario,
                     Usuario: datosUsuario
+                });
             });
-            })
-  
         });
-   
-     
     },
+    
+    
     register: function(req, res) {
         if(req.session.datosUsuario != undefined){
         return res.redirect("/")

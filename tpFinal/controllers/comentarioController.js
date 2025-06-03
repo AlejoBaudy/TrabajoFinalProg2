@@ -9,8 +9,7 @@ const comentarioController = {
       idUsuario: req.session.datosUsuario.id,
       idProduct: req.body.idProduct,
       Comentario: req.body.comentario,
-      createdAt: new Date(),
-      updatedAt: new Date()
+ 
     })
     .then(function() {
       res.redirect("/product/detalle/" + req.body.idProduct);
